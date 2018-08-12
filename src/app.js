@@ -41,8 +41,6 @@ app.get('/transfer', (request, response) => {
 });
 
 app.post('/transfer', (request, response) => {
-  console.log('>>>>', accounts);
-  console.log('request from', request.body);
   accounts[request.body.from].balance = accounts[request.body.from].balance - request.body.amount;
   accounts[request.body.to].balance = parseInt((accounts[request.body.to].balance + request.body.amount), 10);
 
